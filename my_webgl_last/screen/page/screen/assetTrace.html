@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>资产威胁溯源</title>
+  <link rel="stylesheet" href="js/plugins/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="./js/plugins/scrollbar/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="css/animation.css"/>
+  <link rel="stylesheet" href="../../oem/css/pages.css">
+  <link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="css/page/trace-v2.css"/>
+  <style>
+    .dv-sign .dv-title{
+      background: url('./img/assetTrace/title.png');
+    }
+    .baseInfo-head .b-icon{
+      background: url('./img/assetTrace/asset-small.png');
+      background-size: 100%;
+    }
+    .baseInfo-head .b-info .b-title{
+      background: url('./img/assetTrace/asset-info-title.png');
+      background-size: 100%;
+    }
+
+  </style>
+</head>
+<body>
+<div class="data-view">
+  <div class="dv-header">
+    <div class="dv-sign">
+      <div class="OEM_header"></div>
+      <div class="dv-title"></div>
+    </div>
+    <div class="pull-right">
+      <div class="dv-header-info">
+        <!--<button class="waf-icon j-waf"></button>-->
+        <div class="dv-drop drop-ip">
+          <div class="dv-drop-head">
+                    <span class="drop-head-info">
+                        <span class="drop-label">资产IP:</span>
+                        <input type="text" class="ip" disabled="disabled"/>
+                    </span>
+            <a class="drop-icon ip-search"><i class="fa fa-search"></i></a>
+          </div>
+          <ul class="dv-drop-menu"></ul>
+        </div>
+        <div class="dv-drop drop-time">
+          <div class="dv-drop-head">
+                    <span class="drop-head-info">
+                        <span class="drop-label">时间范围:</span>
+                        <input class="time" type="text"  disabled="disabled"/>
+                    </span>
+            <a class="drop-icon"><i class="fa fa-calendar-o"></i></a>
+          </div>
+          <ul class="dv-drop-menu"></ul>
+        </div>
+        <button class="dv-btn report-download"  style="display: none"><i class="fa fa-download"></i>下载报告</button>
+      </div>
+      <div class="dv-header-tool">
+        <div class="dv-btn tool-toggle"><i class="fa fa-angle-left"></i></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container-fluid dv-page">
+    <div class="row">
+      <div class="col-sm-9 col-md-9 col-lg-9">
+        <div class="trace-view a-bouncein" id="trace-view"></div>
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <div class="dv-panel baseInfo a-bouncein">
+          <div class="dv-panel-heading">
+            <div class="dv-panel-title">
+              <div class="baseInfo-head">
+                <div class="b-icon"></div>
+                <div class="b-info">
+                  <div class="b-title"></div>
+                  <div class="b-value ip-value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dv-panel-body">
+            <div class="baseInfo-data">
+              <div class="basicInfo-details">
+                <div class="basicInfo-key"></div>
+                <div class="symbol">
+                  <div>:</div>
+                  <div>:</div>
+                  <div>:</div>
+                  <div>:</div>
+                  <div>:</div>
+                  <div>:</div>
+                </div>
+                <div class="basicInfo-value"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dv-panel mt-10 a-bouncein">
+          <div class="dv-panel-heading">
+            <div class="dv-panel-title">
+              <span class="tit">攻击源排名</span>
+              <i class="icon"></i>
+            </div>
+          </div>
+          <div class="dv-panel-body attack a-bouncein">
+            <table>
+              <thead>
+              <tr>
+                <th>攻击源</th>
+                <th></th>
+                <th>攻击次数</th>
+              </tr>
+              </thead>
+            </table>
+            <div class="attack-info scrollbar">
+              <table>
+                <tbody class="attack-details"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="dv-panel mt-10 a-bouncein">
+          <div class="dv-panel-heading">
+            <div class="dv-panel-title">
+              <span class="tit">攻击取证</span>
+              <i class="icon"></i>
+            </div>
+          </div>
+          <div class="dv-panel-body">
+            <div class="prove scrollbar">
+              <div class="prove-details">
+                <div class="boundary"></div>
+                <div class="prove-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 no-padding">
+        <div class="dv-panel mt-10 a-bouncein">
+          <div class="dv-panel-heading">
+            <div class="dv-panel-title">
+              <span class="tit">趋势分析</span>
+              <i class="icon"></i>
+            </div>
+          </div>
+          <div class="dv-panel-body">
+            <div id="trend"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="dv-panel mt-10 a-bouncein">
+          <div class="dv-panel-heading">
+            <div class="dv-panel-title">
+              <span class="tit">告警分布</span>
+              <i class="icon"></i>
+            </div>
+          </div>
+          <div class="dv-panel-body">
+            <div id="trace-alert" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dv-tip"><i class="dv-tip-icon"></i><span class="dv-tip-msg"></span></div>
+<script src="js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="./js/plugins/moment/moment.js"></script>
+<script src="./js/plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/plugins/echarts/echarts.min.js"></script>
+<script src="./js/plugins/echarts/echarts-wordcloud.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="js/page/assetTrace-trend.js"></script>
+<script src="js/page/assetTrace-view.js"></script>
+<script src="js/page/assetTrace-baseInfo.js"></script>
+<script src="js/page/assetTrace-alert.js"></script>
+<script src="js/page/assetTrace-proof.js"></script>
+<script src="js/page/assetTrace-attack.js"></script>
+<!-- 配置文件 -->
+<script src="../../oem/js/info.js"></script>
+<script src="../../oem/js/config.js"></script>
+<script src="js/page/assetTrace.js"></script>
+<script src="js/ajaxControl.js"></script>
+
+</body>
+</html>

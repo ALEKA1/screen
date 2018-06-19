@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" href="./css/font-awesome.css">
+<link rel="stylesheet" href="./css/WAF.css">
+<link rel="stylesheet" href="../../oem/css/pages.css">  
+<link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+<style type="text/css">
+.webgl-earth-contain .webgl-earth {
+  top: -22%;
+  left: -53%;
+}
+.earth-marker {
+  position: absolute;
+  display: inline-block;
+  /* background-color: rgba(7, 86, 179, 0.45); */
+  color: #ffffff;
+  font-size: 12px;
+  font-family: 'RopaSans';
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  margin: 0px;
+  border: 0px;
+  padding: 3px 5px;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.earth-marker .earth-detailText {
+  min-width: 60px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+	<div class="section">
+		<div class="waf_header">
+			<div class="headera">
+				<div class="header_section">
+					<div class="OEM_header">
+					</div>
+					<div id="id-searchBar"></div>
+				</div>
+				<div class="header_img">
+					<img src="./images/line.png" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="waf_section">
+			<div class="waf_left">
+				<div class="left_item IP_ranking">
+					<div class="item_header">
+						<div class="item_header_left">
+							<div class="item_header_img">
+								<img src="./images/header_icon.png" alt="">
+							</div>
+							<div class="item_header_ctext">攻击源IP排行</div>
+						</div>
+						<div class="item_header_right">
+							<div class="item_header_btn" id="moreone">
+								<i class="fa fa-ellipsis-h"></i>
+								<div class="moreTitle">
+									<span>更多</span> <span class="ang"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 攻击源IP排行 -->
+					<div class="item_section">
+						<div class="item_border item_border1"></div>
+						<div class="rank" id="rank"></div>
+					</div>
+				</div>
+				<div class="left_item reg_distribution">
+					<div class="item_header">
+						<div class="item_header_left">
+							<div class="item_header_img">
+								<img src="./images/header_icon.png" alt="">
+							</div>
+							<div class="item_header_ctext">攻击来源区域分布</div>
+						</div>
+					</div>
+					<!-- 攻击来源区域分布 -->
+					<div class="item_section">
+						<div class="item_border item_border2"></div>
+						<div class="panel" id="sourceArea_noData">
+							<div class="noData">暂无数据</div>
+							<div class="sourceArea" id="sourceArea"></div>
+						</div>
+					</div>
+				</div>
+				<div class="left_item site_ranking">
+					<div class="item_header">
+						<div class="item_header_left">
+							<div class="item_header_img">
+								<img src="./images/header_icon.png" alt="">
+							</div>
+							<div class="item_header_ctext">被攻击站点排行</div>
+						</div>
+						<div class="item_header_right">
+							<div class="item_header_btn" id="more">
+								<i class="fa fa-ellipsis-h"></i>
+								<div class="moreTitle">
+									<span>更多</span> <span class="ang"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 被攻击站点排行 -->
+					<div class="item_section">
+						<div class="item_border item_border3"></div>
+						<div class="host-loophole" id="host-loophole"></div>
+					</div>
+				</div>
+			</div>
+			<div class="waf_center">
+				<div class="webGL">
+					<div class="webgl-earth-contain">
+						<div style="position: absolute; top: 20px; left: 20px; z-index: 9999;">
+							<div style="margin-bottom: 10px;">
+								<div style="color: #c6dcde; font-size: 0.18rem;">被攻击站点数</div>
+								<div style="color: #55d3ff; font-size: 0.3rem; padding: 5px 0;">
+									<i class="counts flow_in_count c-yellow" data-decimals="2" id="site_num">-</i>
+								</div>
+							</div>
+							<div>
+								<div style="color: #c6dcde; font-size: 0.18rem;">累计攻击者</div>
+								<div style="color: #55d3ff; font-size: 0.3rem; padding: 5px 0;">
+									<i class="counts flow_in_count c-yellow" data-decimals="2"
+										id="cumulative_attacker">-</i>
+								</div>
+							</div>
+						</div>
+						<section id="webgl-content" class="webgl-earth"></section>
+						<div class="webgl-earth-bg"></div>
+					</div>
+				</div>
+				<!-- 攻击表格信息 -->
+				<div class="attack_info">
+					<div class="panel">
+						<div class="grid">
+							<table class="grid-head" id="grid-title"></table>
+							<div class="box-border"></div>
+							<div class="grid-body" id="attack_noData">
+								<div class="noData">暂无数据</div>
+								<div class="list-body" id="grid-list"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="waf_right">
+				<div class="right_item alarm_stat">
+					<div class="item_header">
+						<div class="item_header_left">
+							<div class="item_header_img">
+								<img src="./images/header_icon.png" alt="">
+							</div>
+							<div class="item_header_ctext">告警统计</div>
+						</div>
+					</div>
+					<!-- 告警统计 -->
+					<div class="item_section">
+						<div class="item_border item_border4"></div>
+						<div class="alarm">
+							<div class="alarm_text">
+								<div class="alarm_num">
+									<div class="alarm_img">
+										<img src="./images/alarm.png" alt="总告警数">
+									</div>
+									<div class="alarm_info">
+										<div class="alarm_digital">
+											<i class="count areaCount timer c-yellow" id="allAlarm"></i>
+										</div>
+										<div class="alarm_title">总告警数</div>
+									</div>
+								</div>
+								<div class="alarm_num">
+									<div class="alarm_img">
+										<img src="./images/prevent.png" alt="阻断告警数">
+									</div>
+									<div class="alarm_info">
+										<div class="alarm_digital">
+											<i class="count areaCount timer c-yellow" id="stopAlarm"></i>
+										</div>
+										<div class="alarm_title">阻断告警数</div>
+									</div>
+								</div>
+							</div>
+							<div class="alarm_liquidfill">
+								<div class="liquidfill_grade_ball">
+									<div class="liquidfill" id="all_grade"></div>
+								</div>
+								<div class="liquidfill_grade">
+									<div class="alarm_grade">高危</div>
+									<div class="alarm_grade">中危</div>
+									<div class="alarm_grade">低危</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right_item alarm_trend">
+					<div class="item_header">
+						<div class="item_header_left">
+							<div class="item_header_img">
+								<img src="./images/header_icon.png" alt="">
+							</div>
+							<div class="item_header_ctext">告警趋势</div>
+						</div>
+						<div class="item_header_right" style="display:none;">
+							<div class="item_header_btn" id="alarm-trend-more">
+								<i class="fa fa-ellipsis-h"></i>
+								<div class="moreTitle">
+									<span>更多</span> <span class="ang"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 告警趋势 -->
+					<div class="item_section">
+						<div class="item_border item_border5"></div>
+						<div id="alarm-trend" style="height: 100%">
+							<div id="menu-header">
+								<div>
+									<span class="menu-header-rank"> <span> <span>排名</span>
+									</span>
+									</span> <span class="menu-header-ip"> <span> <span>IP</span>
+									</span>
+									</span> <span class="menu-header-count"> <span> <span>
+												告警次数 </span>
+									</span>
+									</span> <span class="menu-header-level"> <span> <span>
+												级别占比 </span>
+									</span>
+									</span>
+								</div>
+							</div>
+							<div id="alarm-trend-chart"></div>
+							<div id="alarm-trend-menu"></div>
+							<div id="alarm-noData">暂无数据</div>
+						</div>
+					</div>
+				</div>
+				<div class="right_item alarm_type">
+					<div class="item_header">
+						<div class="item_header_left">
+							<div class="item_header_img">
+								<img src="./images/header_icon.png" alt="">
+							</div>
+							<div class="item_header_ctext">告警类型分布</div>
+						</div>
+					</div>
+					<!-- 告警类型分布 -->
+					<div class="item_section">
+						<div class="item_border item_border6"></div>
+						<div class="panel" id="alarmType_noData">
+							<div class="noData">暂无数据</div>
+							<div class="alarmType" id="alarmType"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/global.js"></script>
+	<script type="text/javascript" src="./js/webGL/js/Three.js"></script>
+	<script type="text/javascript" src="./js/webGL/js/THREEx.KeyboardState.js"></script>
+	<script type="text/javascript" src="./js/webGL/js/THREEx.WindowResize.js"></script>
+	<script type="text/javascript" src="./js/webGL/js/tessalator3d.js"></script>
+  <script type="text/javascript" src="./js/webGL/js/country_data.js"></script>
+	<script type="text/javascript" src="./js/webGL/js/earth.js"></script>
+
+	<script type="text/javascript" src="./js/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="./js/echarts/echarts-liquidfill.js"></script>
+	<script type="text/javascript" src="./js/jQuery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="./js/waf/chart.js"></script>
+	<script type="text/javascript" src="./js/comm/location-reflect.js"></script>
+
+	<!-- 搜索条 -->
+	<link rel="stylesheet" href="./js/searchBar/css/searchBar.css"/>
+	<script type="text/javascript" src="./js/searchBar/js/searchBar.js"></script>
+
+	<!-- 攻击源ip排行 -->
+	<script type="text/javascript" src="./js/waf/ipsource.js"></script>
+	<!-- 被攻击站点排行 -->
+	<script type="text/javascript" src="./js/waf/site.js"></script>
+	<!-- 告警趋势 -->
+	<script type="text/javascript" src="./js/waf/slot.js"></script>
+	<!-- 攻击来源区域分布  -->
+	<script type="text/javascript" src="./js/waf/sourceArea.js"></script>
+	<!-- 告警类型分布  -->
+	<script type="text/javascript" src="./js/waf/alarmType.js"></script>
+	<!-- 滚动列表  -->
+	<script type="text/javascript" src="./js/waf/scroll_table.js"></script>
+	<!-- 告警统计 -->
+	<script type="text/javascript" src="./js/waf/alarmLiqiu.js"></script>
+	<!-- 被攻击站点数 -->
+	<script type="text/javascript" src="./js/waf/attacker.js"></script>
+	<!-- 累计攻击者 -->
+	<script type="text/javascript" src="./js/waf/ipnumber.js"></script>
+	<!-- 入口文件  -->
+	<script type="text/javascript" src="./js/waf/waf.js"></script>
+  <!-- 配置文件 -->
+  <script src="../../oem/js/info.js"></script>
+  <script src="../../oem/js/config.js"></script>
+	<!-- ajax匹配状态码 -->
+	<script type="text/javascript" src="./js/ajaxControl.js"></script>
+</body>
+</html>

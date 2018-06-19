@@ -1,0 +1,138 @@
+.hbox > .background{
+  background-color: #2b323c;
+}
+.hbox .hideHead {
+  background-color: #2b323c;
+}
+.hbox .hideHead .el-submenu__title,
+.el-menu-item{
+  color: #fff;
+}
+.hbox .hideHead .el-menu a .el-menu-item{
+  color: #B7BDBD;
+}
+.hbox .hideHead a .el-menu-item{
+  color: #fff;
+}
+.hbox .hideHead .el-menu-item:hover{
+  background-color: #1d2228;
+  color: #FFA200;
+}
+.hbox .hideHead .el-submenu .el-menu{
+  background-color: #1d2228;
+}
+.hbox .hideHead .el-menu-item.is-active{
+  color: #fff!important;
+  background-color: #1d2228;
+}
+.hbox .hideHead .el-menu-item:hover .fa{
+  color: #FFA200;
+}
+.hbox .hideHead .fa{
+  color: #ffffff;
+}
+.hbox .hideHead .me .el-submenu__title:hover .fa{
+  color: #FFA200;
+}
+.hbox .hideHead .me .el-submenu__title:hover{
+  color: #FFA200;
+  background-color: #2b323c;
+}
+.el-menu--dark .el-menu-item:hover{
+  background-color: #2b323c;
+}
+
+
+.hbox > aside{
+  background-color: #343743;
+  border-right: none;
+}
+.hbox > .background{
+  background-color: #2b323c;
+}
+.el-menu--dark{
+  background-color: #434859;
+}
+ .hbox .el-submenu__title,
+.el-menu-item{
+  color: #fff;
+  font-size: 12px;
+  line-height: 43px;
+}
+ .hbox .el-menu a .el-menu-item{
+  color: #fff;
+}
+ .hbox a .el-menu-item{
+  color: #fff;
+ }
+ .hbox .el-menu-item:hover{
+  background-color: #56beda!important;
+  color: #fff!important;
+}
+ .hbox .el-submenu .el-menu{
+  background-color: #1d2228;
+}
+ .hbox .el-menu-item.is-active{
+  color: #fff!important;
+  background-color: #56beda;
+}
+ .hbox .el-menu-item:hover .fa{
+  color: #fff;
+}
+ .hbox .aside .fa{
+  color: #ffffff;
+  font-size: 12px;
+}
+ .hbox .el-submenu__icon-arrow{
+   margin-top: -4px;
+ }
+ .hbox .me .el-submenu__title:hover .fa{
+  color: #fff!important;
+}
+ .hbox .me .el-submenu__title:hover{
+  color: #fff;
+  background-color: #56beda;
+}
+.el-menu--dark .el-menu-item:hover{
+  background-color: #2b323c;
+}
+
+@-webkit-keyframes widthChange {
+  0% {
+    width: 64px;
+  }
+
+  100% {
+    width: 160px;
+  }
+}
+
+@-moz-keyframes widthChange {
+  0% {
+    width: 64px;
+  }
+
+  100% {
+    width: 160px;
+  }
+}
+
+@-o-keyframes widthChange {
+  0% {
+    width: 64px;
+  }
+
+  100% {
+    width: 160px;
+  }
+}
+
+@keyframes widthChange {
+  0% {
+    width: 64px;
+  }
+
+  100% {
+    width: 160px;
+  }
+}

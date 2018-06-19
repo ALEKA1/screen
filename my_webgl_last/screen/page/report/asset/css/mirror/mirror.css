@@ -1,0 +1,53 @@
+/**
+ * @author Sean.xiang
+ *@date 2016/10/31
+ *@version
+ *@example
+ */
+
+.mirror{
+    display: block;
+    background-color: #fff;
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+    position: relative;
+    height: 300px;
+    margin-bottom: 30px;
+}
+.mirror:hover{
+    -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.3) !important;
+    -moz-box-shadow: 0 5px 20px rgba(0,0,0,0.3) !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3) !important;
+}
+.mirror .m-img{
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+}
+.mirror .m-name{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    line-height: 300px;
+    display: block;
+    opacity: 0;
+    filter: alpha(opacity=1);
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+
+}
+.mirror:hover .m-name{
+    background-color: rgba(0,0,0,.3);
+    opacity: 1;
+    filter: alpha(opacity=100);
+
+}

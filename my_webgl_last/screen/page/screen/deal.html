@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="js/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link href="css/mirror/mirror_common.css" rel="stylesheet" type="text/css" />
+    <link href="css/mirror/deal.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body class="mirror_bg">
+<!--header-->
+<header class="OEM_header"></header>
+<!--nav-->
+<nav class="mirror-nav"></nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="day">
+                                                <div class="day-bg">
+                                                    <div class="info-up">
+                                                        有效攻击次数
+                                                        <p class="dayDeal"></p>
+                                                    </div>
+                                                    <div class="info-down">
+                                                        有效攻击次数环比
+                                                        <p class="perDeal"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="day">
+                                                <div class="day-bg">
+                                                    <div class="info-up">
+                                                        告警次数
+                                                        <p class="dayWarning"></p>
+                                                    </div>
+                                                    <div class="info-down">
+                                                        告警次数环比
+                                                        <p class="perWarning"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box" style="border-color: transparent;margin-top: 14%">
+                                        <div class="b-title">最新有效攻击</div>
+                                        <table class="m-grid useAttack">
+                                            <thead>
+                                            <tr>
+                                                <th>告警时间</th>
+                                                <th>攻击者IP</th>
+                                                <th>告警类型</th>
+                                                <th>处置详情</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                        <div class="gridRoll" id="deal-roll">
+                                            <div class="gridList" id="deal-info">
+                                                <table class="m-grid useAttack">
+                                                    <tbody>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <i class="b-lt"></i>
+                                        <i class="b-lb"></i>
+                                        <i class="b-rt"></i>
+                                        <i class="b-rb"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box-act">
+                                        <div class="b-title">有效攻击类型TOP5</div>
+                                        <div class="p-body" >
+                                            <div id="act-top5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="box-tend" style="margin-bottom: 4%">
+                                        <div class="b-title">24小时告警趋势分析</div>
+                                        <div class="p-body">
+                                            <div id="tend-day"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="box">
+                                        <div class="b-title">近7天告警/有效攻击趋势分析</div>
+                                        <div class="p-body">
+                                            <div id="tend-week"></div>
+                                        </div>
+                                        <i class="b-lt"></i>
+                                        <i class="b-lb"></i>
+                                        <i class="b-rt"></i>
+                                        <i class="b-rb"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="box">
+                                        <div class="b-title">最新告警信息汇总</div>
+                                        <table class="m-grid warningInfo">
+                                            <thead>
+                                            <tr>
+                                                <th>告警时间</th>
+                                                <th>IP归属</th>
+                                                <th>攻击者IP</th>
+                                                <th>被攻击IP</th>
+                                                <th>告警类型</th>
+                                                <th>威胁级别</th>
+                                                <th>是否处置</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                        <div class="gridRoll" id="info-roll">
+                                            <div class="gridList" id="info-total">
+                                                <table class="m-grid warningInfo">
+                                                    <tbody>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <i class="b-lt"></i>
+                                        <i class="b-lb"></i>
+                                        <i class="b-rt"></i>
+                                        <i class="b-rb"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<footer class="footer"></footer>
+<script src="js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="js/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/plugins/echarts/echarts.min.js"></script>
+<script src="js/plugins/d3/d3.v3.min.js"></script>
+<script src="js/plugins/scrool/scrollNum.js"></script>
+<script src="js/mirror/m-common.js"></script>
+<script src="../../oem/js/info.js"></script>
+<script src="../../oem/js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/mirror/deal.js"></script>
+<script src="js/ajaxControl.js"></script>
+</body>
+</html>

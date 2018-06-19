@@ -1,0 +1,213 @@
+/**
+ * @author ethan.feng
+ *@date 2016/11/2
+ *@version
+ *@example
+ */
+
+.header{
+    background: url("../../image/mirror/attacker/title-bg.png") no-repeat;
+    width: 610px;
+    height: 96px;
+}
+.header .title{
+    margin-top: 28px;
+    height: 40px;
+}
+.page {
+    background-color: rgb(15, 25, 51);
+    width: 100%;
+    height: 100%;
+}
+
+.row1dynamic {
+
+    font-size: 30px;
+    color: #ffff9f;
+    text-align: center;
+    font-family: 'fnum';
+    /*top: -50px;*/
+    /*left: 80px;*/
+}
+
+.row1staic {
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: bottom;
+    position: absolute;
+    top: 45%;
+    left: 52%
+}
+
+.row1dynamicmeasure {
+    font-size: 14px;
+    color: #ffff9f;
+}
+
+.row1dynamicArea {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    font-size: 16px;
+}
+
+.row1col1img {
+    background-image: url("../../image/mirror/monitor1.png");
+    background-size: 58px 89px;
+    height: 89px;
+    width: 58px;
+    /*top: 18.5px;*/
+    /*left: 50px;*/
+    position: absolute;
+    left: 30%;
+    top: 10%
+}
+
+.row1col2img {
+    background-image: url("../../image/mirror/monitor2.png");
+    background-size: 88px 88px;
+    height: 88px;
+    width: 88px;
+    /*top: 19px;*/
+    position: absolute;
+    left: 22%;
+    top: 10%
+}
+
+.row1col3img {
+    background-image: url("../../image/mirror/monitor3.png");
+    background-size: 66px 86px;
+    height: 86px;
+    width: 66px;
+    /*top: 20px;*/
+    position: absolute;
+    left: 20%;
+    top: 10%
+}
+
+.row1col4img {
+    background-image: url("../../image/mirror/monitor4.png");
+    background-size: 102px 80px;
+    height: 80px;
+    width: 102px;
+    /*top: 23px;*/
+    position: absolute;
+    left: 30%;
+    top: 10%
+}
+
+.leftcorner {
+    background-image: url("../../image/mirror/leftcorner.png");
+    background-size: 401px 310px;
+    width: 401px;
+    height: 310px;
+    position: absolute;
+    z-index: 2048;
+    top: 78px;
+    left: 8px;
+}
+
+.rightcorner {
+    background-image: url("../../image/mirror/rightcorner.png");
+    background-size: 401px 310px;
+    width: 401px;
+    height: 310px;
+    position: absolute;
+    z-index: 2048;
+    top: 78px;
+    right: 8px;
+}
+
+
+
+.gridRoll {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.gridList {
+    position: absolute;
+    width: 100%;
+
+}
+
+.m-grid {
+    width: 100%;
+    font-family: 'Simsun';
+    table-layout: fixed;
+}
+
+.m-grid-thead {
+    margin-bottom: 36px;
+}
+
+.m-grid thead th {
+    color: #07a7b3;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.m-grid tbody tr {
+    border-bottom: 1px solid #162962;
+    height: 42px;
+
+}
+
+.m-grid tbody tr:last-child {
+    border-bottom: none;
+}
+
+.m-grid tbody td {
+    font-size: 10px;
+    text-align: left;
+    /*padding: 0px 0;*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /*left: 2px;*/
+}
+
+.m-grid tbody tr td:nth-child(odd) {
+    color: #ffff93
+}
+
+.m-grid tbody tr td:nth-child(even) {
+    color: #fff
+}
+
+.m-grid thead th:nth-child(1),
+.m-grid tbody td:nth-child(1) {
+    width: 15%;
+}
+
+.m-grid thead th:nth-child(2),
+.m-grid tbody td:nth-child(2) {
+    width: 20%;
+}
+
+.m-grid thead th:nth-child(3),
+.m-grid tbody td:nth-child(3) {
+    width: 20%;
+}
+
+.m-grid thead th:nth-child(4),
+.m-grid tbody td:nth-child(4) {
+    width: 35%;
+}
+
+.m-grid thead th:nth-child(5),
+.m-grid tbody td:nth-child(5) {
+    width: 10%;
+}
+
+/*.m-grid thead th:nth-child(5),*/
+/*.m-grid tbody td:nth-child(5) {*/
+/*width: 10%;*/
+/*}*/
+

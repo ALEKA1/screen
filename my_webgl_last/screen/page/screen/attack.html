@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="js/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link href="css/mirror/mirror_common.css" rel="stylesheet" type="text/css" />
+    <link href="css/mirror/attack.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body class="mirror_bg">
+<!--header-->
+<header class="OEM_header"></header>
+<!--nav-->
+<nav class="mirror-nav"></nav>
+<!--footer-->
+<footer class="footer"></footer>
+<div class="container-fluid" style="margin-top: 4%;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="total">
+                <div class="col-md-6">
+                    <div class="t-item">
+                        <div class="t-info">
+                            <div class="t-num j-total"></div>
+                            <span>次</span>
+                        </div>
+                        <div class="t-name">日累计拦截攻击</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="t-item">
+                        <div class="t-info">
+                            <div class="t-num j-count"></div>
+                            <span>次</span>
+                        </div>
+                        <div class="t-name">日累计拦截境内攻击</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="area">
+                <div class="a-title">浙江省内攻击区域视图</div>
+                <div id="attackArea" style="margin-top: -2%"></div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            <div class="box">
+                <div class="b-title">攻击类型排行</div>
+                <div class="b-body">
+                    <div id="attackType"></div>
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+            <div class="box" style="margin-top: 3%">
+                <div class="b-title">攻击源区域排行</div>
+                <div class="b-body">
+                    <div id="attackSource"></div>
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+            <div class="box" style="margin-top: 3%">
+                <div class="b-title">网站被攻击态势分析</div>
+                <div class="b-body">
+                    <div id="attackState"></div>
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="js/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/plugins/echarts/echarts.min.js"></script>
+<script src="js/plugins/d3/d3.v3.min.js"></script>
+<script src="js/plugins/scrool/scrollNum.js"></script>
+<script src="js/mirror/m-common.js"></script>
+<script src="js/plugins/echarts/map/zhejiang.js"></script>
+<script src="js/mirror/location-all.js"></script>
+<script src="js/data.js"></script>
+<script src="js/mirror/attack.js"></script>
+<script src="../../oem/js/info.js"></script>
+<script src="../../oem/js/config.js"></script>
+<script src="js/ajaxControl.js"></script>
+</body>
+</html>

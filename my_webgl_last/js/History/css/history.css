@@ -1,0 +1,67 @@
+.cls-history-menu {
+  min-width: 460px;
+  z-index: 15000;
+  zoom: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*
+   border: 1px solid #999999;
+   background: #F6F6F9;
+  */
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  -o-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.cls-history-menu .cls-history-menu-choose {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 10px 10px;
+  font-size: 12px;
+  overflow: hidden;
+  cursor: default;
+  position: relative;
+}
+/* .cls-history-menu .cls-history-menu-choose:before {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: inline-block;
+  color: #666;
+  content: 'x';  
+} */
+.cls-history-menu .cls-history-menu-choose:before:hover {
+  color: red;
+}
+.cls-history-menu .cls-history-menu-choose:first-child {
+  border-top: 1px solid #ccc;
+}
+.cls-history-menu .cls-history-menu-choose:last-child {
+  border-bottom: 1px solid #ccc;
+}
+.cls-history-menu .cls-history-menu-choose:hover {
+  background-color: #EEE;
+}
+.cls-history-menu .cls-history-menu-choose .cls-history-menu-choose-ico {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inline-block;
+  color: #666;
+  font-style: normal;
+  width: 32px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+.cls-history-menu .cls-history-menu-choose .cls-history-menu-choose-ico:hover {
+  color: #999;
+}
+.cls-history-menu .cls-history-menu-choose .cls-history-menu-choose-ico:before {
+  content: 'x';  
+}

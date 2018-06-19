@@ -1,0 +1,13 @@
+
+.collapse-serach,
+.collapse-defined{
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+}
+.radio-line{
+    vertical-align: bottom;
+    margin-bottom: 0;
+    padding-top: 7px;
+    margin-left: 20px;
+}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./js/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="./js/plugins/scrollbar/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="./css/data-view.css"/>
+  <link rel="stylesheet" href="./css/page/v-warn.css"/>
+  <link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body class="bg">
+<header class="OEM_header">
+</header>
+<div class="header-time">
+  <div class="dv-drop drop-time pull-left">
+    <div class="dv-drop-head">
+        <span class="drop-head-info">
+            <span class="drop-label">时间范围:</span>
+            <input class="time" type="text" disabled="disabled"/>
+        </span>
+      <a class="drop-icon"><i class="fa fa-calendar-o"></i></a>
+    </div>
+    <ul class="dv-drop-menu"></ul>
+  </div>
+  <div class="dv-header-tool pull-left">
+    <div class="dv-btn tool-toggle"><i class="fa fa-angle-left"></i></div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="box box-bg">
+        <div class="box-heading">
+          <h2 class="box-title">安全设备防御态势</h2>
+        </div>
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-1">
+              <div class="user">
+                <i class="u-icon"></i>
+                <span class="u-name">攻击者</span>
+              </div>
+            </div>
+            <div class="col-md-11 device-area">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="box-inner visit-area">
+                    <div class="box-inner-title ">边界防护区</div>
+                    <div class="box-inner-body">
+                      <div class="area"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="box-inner apply-area">
+                    <div class="box-inner-title ">应用区</div>
+                    <div class="box-inner-body">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="server-group"></div>
+                        </div>
+                        <div class="area"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt18">
+                <div class="col-md-6">
+                  <div class="box-inner manage-area">
+                    <div class="box-inner-title ">运维管理区</div>
+                    <div class="box-inner-body">
+                      <div class="area"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="box-inner data-area">
+                    <div class="box-inner-title">数据区</div>
+                    <div class="box-inner-body">
+                      <div class="server-group"></div>
+                      <div class="area"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sign1 ani-h sign-h-info"></div>
+              <div class="sign2 ani-h sign-h-info"></div>
+              <div class="sign3 ani-v sign-v-info"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="box mt18">
+        <div class="box-heading" style="width: 24rem">
+          <h2 class="box-title">规则告警和模型告警态势</h2>
+        </div>
+        <div class="box-body rule-model">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="box-inner">
+                <div class="box-inner-title">规则告警<a href="javascript:;" class="more rule-more" title="更多"><i class="fa fa-ellipsis-h"></i></a></div>
+                <div class="box-inner-body">
+                  <div class="rule-grid-scroll scrollbar">
+                    <table class="grid rule-grid">
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="box-inner">
+                <div class="box-inner-title">场景告警<a href="javascript:;" class="more scene-more" title="更多"><i class="fa fa-ellipsis-h"></i></a></div>
+                <div class="box-inner-body">
+                  <div class="scene-grid-scroll scrollbar">
+                    <table class="grid scene-grid">
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="box" style="overflow: hidden">
+        <div class="box-heading">
+          <h2 class="box-title">攻击者基本信息</h2>
+        </div>
+        <div class="box-body base-info " id="">
+          <div class="attacker">
+            <div class="avatar"></div>
+            <div class="avatar-scan">
+              <i class="scan-line animate"></i>
+            </div>
+          </div>
+          <div class="attack-info info-inline">
+            <p>
+              <span class="i-name">黑客IP</span>
+              <span class="i-value j-ip"></span>
+              <span class="handle-waf">
+                  <span class="waf-wrap">
+                      <span class="waf-icon j-waf"></span>
+                  </span>
+              </span>
+            </p>
+            <p><span class="i-name">来源地</span><span class="i-value j-place"></span></p>
+            <p><span class="i-name">危险等级</span><span class="i-value j-level"></span></p>
+            <p><span class="i-name">信誉度</span><span class="i-value j-web"></span></p>
+          </div>
+          <div class="attack-info info-block">
+            <p><span class="i-name">主要攻击类型</span><span class="i-value j-type"></span></p>
+            <p><span class="i-name">情报信息</span><span class="i-value j-time"></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="box mt18">
+        <div class="box-heading">
+          <h2 class="box-title">攻击者画像信息</h2>
+        </div>
+        <div class="box-body attack">
+          <div class="attack-data">
+            <div class="d-info">
+              <h3>IP反查</h3>
+              <p class="ipSiteCount"></p>
+            </div>
+            <div class="d-info">
+              <h3>IP主要攻击类型</h3>
+              <p class="ipAttackType"></p>
+            </div>
+            <div class="d-info">
+              <h3>处置建议</h3>
+              <p class="suggest"></p>
+            </div>
+            <!--<div class="deal-advice defence"></div>-->
+          </div>
+          <div class="attack-chart">
+            <div class="chart-label">
+              <span><i></i>攻击者</span>
+              <span><i></i>资产</span>
+            </div>
+            <div class="chart" id="ipChart"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box mt18">
+        <div class="box-heading">
+          <h2 class="box-title">实时场景分析</h2>
+        </div>
+        <div class="box-body time-body">
+          <table class="grid time-grid">
+            <thead>
+            <tr>
+              <th>时间</th>
+              <th>攻击者</th>
+              <th>攻击目标</th>
+              <!--<th>信誉度</th>-->
+              <!--<th>等级</th>-->
+              <th>触发模型</th>
+              <th>次数</th>
+            </tr>
+            </thead>
+          </table>
+          <div class="time-grid-scroll scrollbar">
+            <table class="grid time-grid">
+              <tbody class="time-grid-body"></tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--alert Modal -->
+<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     style="overflow-y:hidden;">
+  <div class="modal-dialog modal-warning" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"></h4>
+        <span class="modal-time pull-right"></span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body-inner">
+          <table class="grid ip-grid">
+            <thead>
+            <tr></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <table class="grid url-grid">
+            <thead>
+            <tr></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <div class="scrollbar" style="max-height: 120px;">
+            <p class="principle"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="waf-info"></div>
+<script src="./js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="./js/plugins/moment/moment.js"></script>
+<script src="./js/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="./js/plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="./js/plugins/echarts/echarts.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/page/v-warn.js"></script>
+<script src="../../oem/js/info.js"></script>
+<script src="../../oem/js/config.js"></script>
+<script src="js/ajaxControl.js"></script>
+</body>
+</html>

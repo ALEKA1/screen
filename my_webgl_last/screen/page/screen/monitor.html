@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./js/plugins/bootstrap/css/bootstrap.min.css">
+  <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="./css/animation.css" rel="stylesheet" type="text/css" />
+  <link href="./css/common.css" rel="stylesheet" type="text/css" />
+  <link href="./css/page/webMonitor.css" rel="stylesheet" type="text/css" />
+  <link href="./css/page/screen.css" rel="stylesheet" type="text/css" />
+  <link href="./css/modal.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="./js/plugins/scrollbar/jquery.mCustomScrollbar.css">
+  <link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+  <script src="./js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+  <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <![endif]-->
+  <!--<link rel="icon" href="__PUBLIC__/asset/image/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="__PUBLIC__/asset/image/favicon.ico" type="image/x-icon">-->
+
+
+</head>
+<body class="bg">
+<!-- 所有需要用到的插件在这里定义 -->
+<div class="header">
+  <div class="title">
+    <h1> <span></span></h1>
+  </div>
+  <div class="total">
+        <span id="inOutMinTag" >
+            <a><i class="line-chart-in"></i><i class="txt">进流量</i><i class="count flow_in_count c-yellow" data-decimals="2" ></i><span>MB</span></a>
+              <a><i class="line-chart-out"></i><i class="txt">出流量</i><i class="count flow_out_count c-yellow" data-decimals="2" ></i><span>MB</span></a>
+        </span>
+    <span id="attackTag">
+            <a><i class="fa fa-bullhorn"></i><i class="txt">访问量</i><i class="count areaCount timer c-yellow" ></i><span>次</span></a>
+            <a><i class="fa fa-bolt"></i><i class="txt">攻击量</i><i class="count ipCount timer c-yellow" >0</i><span>次</span></a>
+        </span>
+  </div>
+
+
+</div>
+<div class="container-fluid content">
+  <div class="row no-margin">
+    <div class="col-md-3" style="padding: 0 5px 0 0">
+      <div class="box avail">
+        <div class="box-heading text-center">
+          <h2 class="box-title box-title1">网站区域访问量</h2>
+        </div>
+        <div class="box-body">
+          <div id="mapVail" class="mt-10">
+          </div>
+        </div>
+      </div>
+      <div class="box visitArea mt-5">
+        <div class="box-heading text-center">
+          <h2 class="box-title box-title2">访问源区域排行</h2>
+        </div>
+        <div class="box-body">
+          <div id="areaRank">
+            <table class="grid grid-rank">
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+      <div class="box visitIp mt-5">
+        <div class="box-heading text-center">
+          <h2 class="box-title box-title3">访问IP排行</h2>
+        </div>
+        <div class="box-body">
+          <div id="visitIp">
+            <table class="grid grid-rank">
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6" style="padding: 0 5px 0 0;">
+      <div class="box map-main">
+        <div class="box-body">
+          <div class="map" id="worldMap" style="padding:0;">
+            <div id="asia"></div>
+            <div id="northAmerica"></div>
+            <div id="southAmerica"></div>
+            <div id="africa"></div>
+            <div id="oceania"></div>
+            <div id="europe"></div>
+            <div id="chinaMap"></div>
+          </div>
+          <div class="grid" id="info-grid" style="height: 160px;">
+            <table class="grid" id="grid-thead">
+
+
+            </table>
+            <div class="box-border" style="margin: 4px 0 6px;"></div>
+            <table class="grid" id="useAttack">
+              <tbody>
+
+              </tbody>
+            </table>
+            <div class="gridRoll">
+              <div class="gridList" id="info" >
+                <table class="grid" >
+                  <tbody class="waf-items">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box attack mt-5" style="">
+        <div class="box-heading text-center">
+          <h2 class="box-title">网站攻击趋势</h2>
+        </div>
+        <div class="box-body">
+          <div id="tab" style="margin-top: -40px;">
+            <div role="tabpanel">
+              <ul class="nav nav-tabs pull-right" role="tablist">
+                <li role="presentation" class="active"><a href="#flow" role="tab" data-toggle="tab">访问分析</a></li>
+                <li role="presentation"><a href="#attack" role="tab" id="inOutMinTab" data-toggle="tab">流量分析</a></li>
+              </ul>
+              <div class="tab-content" >
+                <div role="tabpanel" class="tab-pane fade in active" id="flow">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div id="attackLine" style="margin: 0 -60px 0 -30px"></div>
+                    </div>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade active" id="attack">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div id="flowLine" style="margin: 0 -60px 0 -30px"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style=" width: 240px;color: #00dcff; font-size: 12px;position: absolute;bottom: 1%; left: 50%;margin-left: -120px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 no-padding">
+      <div class="box attackUrl" >
+        <div class="box-heading text-center">
+          <h2 class="box-title box-title4">攻击URL排行</h2>
+        </div>
+        <div class="box-body">
+          <div id="attackUrl">
+            <table class="grid grid-rank">
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="box hole  mt-5" >
+        <div class="box-heading text-center">
+          <h2 class="box-title box-title5">攻击类型排行</h2>
+        </div>
+        <div class="box-body alertInfo">
+          <!--<div id="risk" class="risk">-->
+          <!--<p><span style="margin-left: 30px;" class="remain-danger"></span><span  class='remain-danger-level' style="color: red"></span></p>-->
+          <!--</div>-->
+          <div id="no-risk" style="display: none" class="holeType"></div>
+          <div id="hole-type">
+            <table class="grid grid-rank">
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="box analyze mt-5">
+        <div class="box-heading text-center">
+          <h2 class="box-title box-title6">攻击IP排行</h2>
+        </div>
+        <div class="box-body">
+          <div id="attackIp">
+            <table class="grid grid-rank">
+              <tbody></tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<!--alert Modal -->
+<div class="modal fade in" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="overflow-y:hidden;">
+  <div class="modal-dialog modal-warning" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">title</h4>
+        <span class="modal-time pull-right"></span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body-inner">
+          <table class="grid ip-grid">
+            <thead><tr></tr></thead>
+            <tbody></tbody>
+          </table>
+          <table class="grid url-grid">
+            <thead><tr></tr></thead>
+            <tbody></tbody>
+          </table>
+          <div class="scrollbar" style="max-height: 120px;">
+            <p class="principle"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="./js/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/plugins/layer/layer.min.js"></script>
+<script type="text/javascript" src="./js/plugins/moment/moment.js"></script>
+<script src="./js/plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="./js/plugins/echarts2.0/dist/echarts.js"></script>
+<script type="text/javascript" src="./js/plugins/scrool/scrollNum.js"></script>
+<script type="text/javascript" src="./js/plugins/scrool/item-scoller.js"></script>
+<script type="text/javascript" src="./js/comm/location-reflect.js"></script>
+<script type="text/javascript" src="./js/page/screen.js"></script>
+<script src="js/ajaxControl.js"></script>
+</body>
+</html>

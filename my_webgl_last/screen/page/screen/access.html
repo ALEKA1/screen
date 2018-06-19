@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="js/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link href="css/mirror/mirror_common.css" rel="stylesheet" type="text/css" />
+    <link href="css/mirror/access.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+
+</head>
+<body class="mirror_bg">
+<!--header-->
+<header class="OEM_header"></header>
+<!--nav-->
+<nav class="mirror-nav"></nav>
+<div class="container-fluid" style="margin-top: 30px;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box">
+                <div class="b-title">访问终端分析</div>
+                <div class="b-body">
+                    <div id="terminal"></div>
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box">
+                <div class="b-title">响应码分析</div>
+                <div class="b-body">
+                    <div id="code"></div>
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+        </div>
+        <!--<div class="col-md-4">
+            <div class="box">
+                <div class="b-title">访问来源地分析</div>
+                <div class="b-body">
+                    <div id="source"></div>
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+            <div class="box" style="margin-top: 4%;">
+                <div class="b-title">设备浏览器分析</div>
+                <div class="b-body">
+                    <div id="device"></div>
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="total">
+                <div class="t-item t-num"><span class="j-count"></span></div>
+                <div class="t-item t-title"><div><span>日累计访问次数</span></div></div>
+            </div>
+
+        </div>
+        <div class="col-md-4">-->
+
+
+        </div>
+    <div class="row" style="margin-top: 4%;">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="b-title">实时访问</div>
+                <div class="real-access">
+                    <div class="access-body">
+                        <table class="m-grid m-grid-thead">
+                            <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>地区</th>
+                                <th>IP</th>
+                                <th>访问URL</th>
+                                <th>响应码</th>
+                            </tr>
+                            </thead>
+                        </table>
+                        <div class="gridRoll">
+                            <div class="gridList" id="access-grid">
+                                <table class="m-grid">
+                                    <tbody>
+                                    <!--<tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    <tr><td>12:25:19</td><td>浙江</td><td>192.168.1.102</td><td>xx》html</td><td>200</td></tr>
+                                    --></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<footer class="footer"></footer>
+<script src="js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="js/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/plugins/echarts/echarts.min.js"></script>
+<script src="js/plugins/d3/d3.v3.min.js"></script>
+<script src="js/plugins/scrool/scrollNum.js"></script>
+<script src="js/mirror/m-common.js"></script>
+<script src="../../oem/js/info.js"></script>
+<script src="../../oem/js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/mirror/access.js"></script>
+<script src="js/ajaxControl.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+.dw-accordion-menu, .dw-accordion-menu * {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  outline: 0;
+}
+.dw-accordion-menu {
+  width: 100%;
+  height: 100%;
+  float: left;
+  position: relative;
+  /* background: #e6e8ea; */
+  /* box-shadow: 0 0 4px -1px #DDDDDD;
+  -moz-box-shadow: 0 0 4px -1px #DDDDDD;
+  -webkit-box-shadow: 0 0 4px -1px #DDDDDD; */
+  /* box-shadow: 0 0 4px -1px #DDDDDD;
+  -moz-box-shadow: 0 0 4px -1px #DDDDDD;
+  -webkit-box-shadow: 0 0 4px -1px #DDDDDD; */
+  /* box-shadow: 3px 3px 7px #DADADA;
+  -moz-box-shadow: 3px 3px 7px #DADADA;
+  -webkit-box-shadow: 3px 3px 7px #DADADA;
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4', MakeShadow='true', ShadowOpacity='0.2'); */
+  /* box-shadow: 0 6px 12px #333; */
+  /* box-shadow: 0 6px 12px #333;
+  -moz-box-shadow: 0 6px 12px #333;
+  -webkit-box-shadow: 0 6px 12px #333; */
+  /* background-color: #f5f5f5; */
+  /* border-right: 1px solid #DDDDDD; */
+  /*background-color: #fafafa;
+  background-image: -moz-linear-gradient(top,#fff,#f2f2f2);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top,#fff,#f2f2f2);
+  background-image: -o-linear-gradient(top,#fff,#f2f2f2);
+  background-image: linear-gradient(to bottom,#fff,#f2f2f2);
+  background-repeat: repeat-x;
+  border-right: 1px solid #d4d4d4;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff2f2f2',GradientType=0);
+  -webkit-box-shadow: 4px 1px 4px rgba(0,0,0,0.065);
+  -moz-box-shadow: 4px 1px 4px rgba(0,0,0,0.065);
+  box-shadow: 4px 1px 4px rgba(0,0,0,0.065);*/
+
+  background-color: #434859;
+  /* border-right: 1px solid rgba(0, 0, 0, 0.0980392); */
+}
+.dw-accordion-menu .submenu:after, .dw-accordion-menu ul li:after {
+  content: ".";
+  display: block;
+  height: 0px;
+  font-size: 0px;
+  clear: both;
+  visibility: hidden;
+}
+.blue {
+  background: #4A89DC;
+}
+.dw-accordion-menu .dw-accordion-menu-footer,.dw-accordion-menu .dw-accordion-menu-header {
+  width: 100%;
+  height: 50px;
+  padding-left: 22px;
+  float: left;
+  line-height: 50px;
+  font-weight: 600;
+  color: #fff;
+  background: #414956;
+}
+.dw-accordion-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dw-accordion-menu ul li {
+  width: 100%;
+  display: block;
+  float: left;
+  position: relative;
+}
+.dw-accordion-menu ul li a {
+  width: 100%;
+  height: 44px;
+  padding: 10px 24px;
+  float: left;
+  text-decoration: none;
+  /* color: #6D7074; */
+  /*color: #868E8E;*/
+  color: #fff;
+  font-size: 12px;
+  /* background: #e6e8ea; */
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  -o-transition: color .2s linear, background .2s linear;
+  -moz-transition: color .2s linear, background .2s linear;
+  -webkit-transition: color .2s linear, background .2s linear;
+  transition: color .2s linear, background .2s linear;
+  /* background-color: #fafafa;
+  background-image: -moz-linear-gradient(top,#fff,#f2f2f2);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top,#fff,#f2f2f2);
+  background-image: -o-linear-gradient(top,#fff,#f2f2f2);
+  background-image: linear-gradient(to bottom,#fff,#f2f2f2);
+  background-repeat: repeat-x;
+  border-bottom: 1px solid #d4d4d4;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff2f2f2',GradientType=0);
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.065); */
+}
+.dw-accordion-menu>ul>li .active,.dw-accordion-menu>ul>li>a:hover, .dw-accordion-menu>ul>li>.dw-accordion-active {
+  /* color: #6D7074;
+  background: #e6e8ea; */
+  color: #fff;
+  /* background-color: #fafafa;
+  background-image: -moz-linear-gradient(top,#fff,#f2f2f2);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top,#fff,#f2f2f2);
+  background-image: -o-linear-gradient(top,#fff,#f2f2f2);
+  background-image: linear-gradient(to bottom,#fff,#f2f2f2);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff2f2f2',GradientType=0);
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.065); */
+  background-color: #56BEDA;
+}
+.dw-accordion-menu>ul>li>a {
+  /*border-bottom: solid 1px #D9DBDD;*/
+  border-bottom: solid 1px transparent;
+}
+.dw-accordion-menu ul li a i {
+  width: 24px;
+  line-height: 23px;
+  font-size: 14px;
+  text-align: left;
+  position: absolute;
+  left: 24px;
+}
+.dw-accordion-menu .submenu-indicator {
+  color: #fff;
+  float: right;
+  right: 22px;
+  position: absolute;
+  line-height: 22px;
+  font-size: 20px;
+  -o-transition: transform .3s linear;
+  -moz-transition: transform .3s linear;
+  -webkit-transition: transform .3s linear;
+  -ms-transition: transform .3s linear;
+}
+.dw-accordion-menu ul ul.submenu .submenu-indicator {
+  line-height: 24px;
+}
+.cls-accordion-menu .submenu-indicator-minus>.submenu-indicator {
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.dw-accordion-menu ul ul.submenu,.dw-accordion-menu ul ul.submenu li ul.submenu {
+  width: 100%;
+  /*display: none;*/
+  position: static;
+
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: height 0.6s;
+  -moz-transition: height 0.6s;
+  -o-transition: height 0.6s;
+  transition: height 0.6s;
+  background-color: rgb(31, 45, 61);
+}
+.dw-accordion-menu ul ul.submenu li {
+  clear: both;
+  width: 100%;
+}
+.dw-accordion-menu ul ul.submenu li a {
+  width: 100%;
+  height: 100%;
+  float: left;
+  font-size: 12px;
+  color: #868E8E;
+  /*background: #FFFFFF;*/
+  border-top: none;
+  position: relative;
+  border: 0;
+  border-left: solid 6px transparent;
+  -o-transition: border .2s linear;
+  -moz-transition: border .2s linear;
+  -webkit-transition: border .2s linear;
+  transition: border .2s linear;
+  box-shadow: none;
+  -o-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.dw-accordion-menu ul ul.submenu li:last-child a {
+  /*border-bottom: 1px solid #F3F3F3;*/
+  border-bottom: 1px solid transparent;
+}
+/* .dw-accordion-menu ul ul.submenu li a {
+	width: 100%;
+	float: left;
+	font-size: 12px;
+	background: #FFFFFF;
+	border-top: none;
+	position: relative;
+	border-left: solid 6px transparent;
+	-o-transition: border .2s linear;
+	-moz-transition: border .2s linear;
+	-webkit-transition: border .2s linear;
+	transition: border .2s linear
+} */
+.dw-accordion-menu ul ul.submenu li>a:hover, .dw-accordion-menu ul ul.submenu li>a.dw-accordion-active {
+  border-left-color: #56BEDA;
+  color: #56BEDA;
+  /* background-color: #56BEDA; */
+}
+.dw-accordion-menu ul ul.submenu>li>a {
+  color: #fff;
+  padding-left: 0;
+}
+.dw-accordion-menu ul ul.submenu>li>ul.submenu>li>a {
+  padding-left: 16px;
+}
+/* .dw-accordion-menu ul ul.submenu>li>ul.submenu>li>ul.submenu>li>a {
+  padding-left: 60px;
+} */
+.dw-accordion-menu ul li .dw-accordion-menu-label,.dw-accordion-menu ul ul.submenu li .dw-accordion-menu-label {
+  min-width: 20px;
+  padding: 1px 2px 1px 1px;
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #555;
+  text-align: center;
+  line-height: 18px;
+  background: #f0f0f0;
+  border-radius: 100%;
+}
+.dw-accordion-menu ul ul.submenu li .dw-accordion-menu-label {
+  top: 12px;
+}
+.dw-accordion-menu ul ul.submenu li i.fa {
+  visibility: hidden;
+}
+.dw-accordion-collapse {
+	width: 64px;
+}
+.dw-accordion-collapse ul li a i {
+  line-height: 23px;
+}
+.dw-accordion-collapse .dw-accordion-node-text, .dw-accordion-collapse .submenu-indicator {
+	display: none;
+}
+.dw-accordion-menu .dw-accordion-node-text {
+	padding: 0 5px 0 29px;
+  line-height: 23px;
+}
+.dw-accordion-menu ul ul.submenu li .dw-accordion-node-text {
+  padding-left: 24px;
+}
+.dw-accordion-collapse ul ul.submenu {
+	position: absolute;
+	top: 0;
+  left: 64px;
+}
+/*.dw-accordion-collapse>ul>li>a+ul.submenu {
+  width: 200px;
+}
+.dw-accordion-collapse>ul>li>a+ul.submenu .dw-accordion-node-text, .dw-accordion-collapse>ul>li>a+ul.submenu .submenu-indicator {
+  display: block;
+}
+.dw-accordion-collapse>ul>li:hover ul.submenu {
+  height: auto;
+}
+.dw-accordion-collapse ul ul.submenu li ul.submenu {
+	left: 0;
+}
+.dw-accordion-collapse .slidedown {
+  height: auto !important;
+}
+.dw-accordion-collapse .submenu li .submenu:last-child {
+  bottom: 0;
+  top: auto;
+}*/
+.dw-accordion-fixed {
+  width: 200px !important;
+  position: fixed !important;
+  z-index: 1200;
+}
+.dw-accordion-fixed .dw-accordion-node-text {
+  display: block;
+}
+.dw-accordion-collapse 
+.ink {
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, .3);
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+.animate-ink {
+  -webkit-animation: ripple .5s linear;
+  -moz-animation: ripple .5s linear;
+  -ms-animation: ripple .5s linear;
+  -o-animation: ripple .5s linear;
+  animation: ripple .5s linear;
+}
+@-webkit-keyframes ripple { 100%{
+  opacity: 0;
+  -webkit-transform: scale(2.5);
+}
+}
+@-moz-keyframes ripple { 100%{
+	opacity: 0;
+	-moz-transform: scale(2.5);
+}
+}
+@-o-keyframes ripple { 100%{
+  opacity: 0;
+  -o-transform: scale(2.5);
+}
+}
+@keyframes ripple { 100%{
+  opacity: 0;
+  transform: scale(2.5);
+}
+}
+.blue.dw-accordion-menu .dw-accordion-menu-footer,.blue.dw-accordion-menu .dw-accordion-menu-header,.blue.dw-accordion-menu ul li a
+{
+  background: #4A89DC;
+}
+.blue.dw-accordion-menu>ul>li.active>a,.blue.dw-accordion-menu>ul>li:hover>a {
+  background: #3e82da;
+}
+.blue.dw-accordion-menu>ul>li>a {
+  color: #fff;
+  border-bottom-color: #3e82da;
+}
+.blue.dw-accordion-menu ul ul.submenu li:hover>a {
+  border-left-color: #3e82da;
+}
+.blue.dw-accordion-menu ul ul.submenu > li > a {
+  background: #3e82da;
+}
+.green.dw-accordion-menu .dw-accordion-menu-footer,.green.dw-accordion-menu .dw-accordion-menu-header,.green.dw-accordion-menu ul li a {
+  background: #03A678;
+}
+.green.dw-accordion-menu>ul>li.active>a,.green.dw-accordion-menu>ul>li:hover>a {
+  background: #049372;
+}
+.green.dw-accordion-menu>ul>li>a {
+  color: #fff;
+  border-bottom-color: #049372;
+}
+.green.dw-accordion-menu ul ul.submenu li:hover>a {
+  border-left-color: #049372;
+}
+.red.dw-accordion-menu .dw-accordion-menu-footer,.red.dw-accordion-menu .dw-accordion-menu-header,.red.dw-accordion-menu ul li a {
+  background: #ED5565;
+}
+.red.dw-accordion-menu>ul>li.active>a,.red.dw-accordion-menu>ul>li:hover>a {
+  background: #DA4453;
+}
+.red.dw-accordion-menu>ul>li>a {
+  color: #fff;
+  border-bottom-color: #DA4453;
+}
+.red.dw-accordion-menu ul ul.submenu li:hover>a {
+  border-left-color: #DA4453;
+}
+.white.dw-accordion-menu .dw-accordion-menu-footer,.white.dw-accordion-menu .dw-accordion-menu-header,.white.dw-accordion-menu ul li a {
+  background: #fff;
+  color: #555;
+}
+.white.dw-accordion-menu>ul>li.active>a,.white.dw-accordion-menu>ul>li:hover>a {
+  background: #f0f0f0;
+}
+.white.dw-accordion-menu>ul>li>a {
+  color: #333;
+  border-bottom-color: #f0f0f0;
+}
+.white.dw-accordion-menu ul ul.submenu li:hover>a {
+  border-left-color: #f0f0f0;
+}
+.white.dw-accordion-menu ul ul.submenu li a {
+  color: #f0f0f0;
+}
+.white.dw-accordion-menu>ul>li>a>.ink {
+  background: rgba(0, 0, 0, .1);
+}
+.black.dw-accordion-menu .dw-accordion-menu-footer,.black.dw-accordion-menu .dw-accordion-menu-header,.black.dw-accordion-menu ul li a {
+  background: #292929;
+}
+.black.dw-accordion-menu>ul>li.active>a,.black.dw-accordion-menu>ul>li:hover>a {
+  background: #222;
+}
+.black.dw-accordion-menu>ul>li>a {
+  color: #fff;
+  border-bottom-color: #222;
+}
+.black.dw-accordion-menu ul ul.submenu li:hover>a {
+  border-left-color: #222;
+}
+.dw-accordion-menu .dw-accordion-open .submenu-indicator {
+  transform: rotate(180deg);
+}
+.slidedown {
+  transition: height 0.6s;
+  -webkit-transition: height 1s ease-in-out;
+  -moz-transition: height 1s ease-in-out;
+  -ms-transition: height 1s ease-in-out;
+  -o-transition: height 1s ease-in-out;
+  transition: height 1s ease-in-out;
+  height: auto !important;
+}

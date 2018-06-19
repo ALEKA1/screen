@@ -1,0 +1,249 @@
+.uxd-calendar {
+  width: 640px;
+  border: 1px solid #ddd;
+  position: absolute;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  display: none;
+  z-index: 2000;
+}
+.uxd-calendar .uxd-calendar-contain {
+  *zoom: 1;
+}
+.uxd-calendar .uxd-calendar-contain:after {
+  content: ".";
+  display: block;
+  height: 0px;
+  font-size: 0px;
+  clear: both;
+  visibility: hidden;
+}
+.uxd-calendar .uxd-calendar-input input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #555;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  vertical-align: middle;
+  margin: 0 0 5px 0;
+  padding: 0 6px 0 28px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.uxd-calendar .uxd-calendar-startTime {
+  float: left;
+  padding: 0 15px;
+}
+.uxd-calendar .uxd-calendar-endTime {
+  float: left;
+  padding: 0 15px;
+}
+.uxd-calendar .uxd-calendar-shortcut {
+  float: left;
+  padding: 20px 10px 10px 10px;
+  height: 330px;
+  border-left: 1px solid #ddd;
+  /* border-right: 1px solid #ddd; */
+  width: 110px;
+}
+.uxd-calendar .uxd-calendar-shortcut ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.uxd-calendar table {
+  padding: 5px 10px 10px 10px;
+  /* border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd; */
+}
+.uxd-calendar table th {
+  /* border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; */
+  padding: 10px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.uxd-calendar table td {
+  /* border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; */
+  text-align: center;
+  height: 32px;
+  font-size: 12px;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.uxd-calendar table td.pervMonth
+,.uxd-calendar table td.nextMonth {
+  color: rgba(0,0,0,.25);
+  cursor: default;
+}
+.uxd-calendar table td.curMonth:hover {
+  background-color: #eee;
+}
+.uxd-calendar .uxd-calendar-oper {
+  text-align: center;
+  position: relative;
+  /* border-bottom: 1px solid #ddd; */
+  user-select: none;
+  font-size: 12px;
+}
+.uxd-calendar a {
+  cursor: pointer;
+}
+.uxd-calendar a:hover {
+  color: #00B7EE;
+}
+.uxd-calendar .uxd-calendar-center {
+  margin: 0 auto;
+  line-height: 32px;
+}
+.uxd-calendar .uxd-calendar-center a {
+  cursor: default;
+  color: #333333;
+}
+.uxd-calendar .uxd-calendar-center a:hover {
+  color: #333333;
+}
+.uxd-calendar .uxd-calendar-pervYear {
+  top: 6px;
+  left: 20px;
+  position: absolute;
+  cursor: pointer;
+  color: #333333;
+}
+.uxd-calendar .uxd-calendar-pervMonth {
+  top: 6px;
+  left: 46px;
+  position: absolute;
+  cursor: pointer;
+  color: #333333;
+}
+.uxd-calendar .uxd-calendar-nextYear {
+  top: 6px;
+  right: 20px;
+  position: absolute;
+  cursor: pointer;
+  color: #333333;
+}
+.uxd-calendar .uxd-calendar-nextMonth {
+  top: 6px;
+  right: 46px;
+  position: absolute;
+  cursor: pointer;
+  color: #333333;
+}
+.uxd-calendar .uxd-calendar-btn-wrap {
+  border-top: 1px solid #ddd;
+  text-align: right;
+}
+.uxd-calendar .uxd-calendar-btn
+, .uxd-calendar .uxd-calendar-btn-ok 
+, .uxd-calendar .uxd-calendar-btn-clear
+, .uxd-calendar .uxd-calendar-btn-today
+{
+  display: inline-block;
+  text-align: center;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  position: relative;
+  color: #fff;
+  background-color: #108ee9;
+  border-color: #108ee9;
+  font-size: 12px;
+  border-radius: 2px;
+  line-height: 20px;
+  outline: 0;
+  padding: 0 20px;
+  margin: 10px;
+}
+.uxd-calendar .uxd-calendar-btn-clear {
+  min-width: 50px;
+  margin: 10px 10px 10px 0;
+  border-color: #ddd;
+  background-color: transparent;
+  color: #333;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.uxd-calendar .uxd-calendar-btn-ok {
+  min-width: 50px;
+  margin: 10px 10px 10px 0;
+  border-color: #ddd;
+  background-color: transparent;
+  color: #333;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.uxd-calendar .uxd-calendar-btn {
+  min-width: 50px;
+  margin: 0 10px 5px 0;
+  color: #333;
+  border-color: transparent;
+  background-color: #fff;
+  text-align: left;
+}
+.uxd-calendar-oper-wrap .uxd-calendar-pervMonth:before {
+  display: inline-block;
+  content: '<';
+}
+.uxd-calendar-oper-wrap .uxd-calendar-nextMonth:before {
+  display: inline-block;
+  content: '>';
+}
+.uxd-calendar-oper-wrap .uxd-calendar-pervYear:before {
+  display: inline-block;
+  content: '<<';
+}
+.uxd-calendar-oper-wrap .uxd-calendar-nextYear:before {
+  display: inline-block;
+  content: '>>';
+}
+.uxd-calendar-oper-wrap .uxd-calendar-input-wrap {
+  text-align: center;
+  padding: 20px 0 10px 0;
+}
+.uxd-calendar-oper-wrap .uxd-calendar-input-wrap .uxd-calendar-input-date,
+.uxd-calendar-oper-wrap .uxd-calendar-input-wrap .uxd-calendar-input-time {
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #555;
+  height: 26px;
+  line-height: 26px;
+  vertical-align: middle;
+  padding: 0 6px 0 6px;
+  box-sizing: border-box;
+  width: 110px;
+}
+.uxd-calendar .uxd-calendar-startTime .selectDate,
+.uxd-calendar .uxd-calendar-endTime .selectDate {
+  color: #fff;
+  background-color: #00B7EE;
+}
+.uxd-calendar .uxd-calendar-startTime .selectDate:hover,
+.uxd-calendar .uxd-calendar-endTime .selectDate:hover {
+  color: #fff;
+  background-color: #00B7EE;
+}
+.uxd-calendar .uxd-calendar-disabled {
+	color: #eee;
+}
+.uxd-calendar .uxd-calendar-disabled:hover {
+	color: #eee;
+}

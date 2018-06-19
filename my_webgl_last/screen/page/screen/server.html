@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="js/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link href="css/mirror/mirror_common.css" rel="stylesheet" type="text/css" />
+    <link href="css/mirror/server.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+</head>
+
+<body class="mirror_bg">
+    <!--header-->
+    <header class="OEM_header"></header>
+    <!--nav-->
+    <nav class="mirror-nav"></nav>
+    <div class="container-fluid mt-20">
+        <div class="row">
+            <div class="span12">
+                <div class="row-fluid">
+                    <div class="col-md-3">
+                        <div class="box" id="standforpos" style="border: none;">
+                            <div class="box-icon icon1"></div>
+                            <div class="box-content">
+                                <div class="box-label">
+                                    <span>接入主机数</span>
+                                    <span class="box-info-num" id="plugDevNum">0</span>
+                                    <span class="box-info-label">台</span>
+                                </div>
+                                <div class="box-label">
+                                    <span>接入网络设备数</span>
+                                    <span class="box-info-num" id="plugDevNum">0</span>
+                                    <span class="box-info-label">台</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="box" id="standforpos1" style="border: none;">
+                            <div class="box-icon icon2">
+                                <div class="spaceinner">
+                                    <div class="spacebottom"></div>
+                                </div>
+                            </div>
+
+                            <div class="box-content">
+                                <!-- <div class="box-info">
+                                    <span class="box-info-num" id="spaceUsed">0</span>
+                                    <span class="box-info-label">GB</span>
+                                </div> -->
+                                <!-- <div class="box-label">占用空间</div> -->
+                                <div class="tl">
+                                    <div class="data">
+                                        <div class="inner">
+                                            <div class="left" style="width: 30%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="box-label alrea">已使用空间数</div>
+                                    <div class="box-label sti">剩余空间数</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box " id="standforpos2" style="border: none;">
+                            <div class="box-icon icon3"></div>
+                            <div class="box-content">
+                                <div class="box-label">
+                                    <span>告警主机数</span>
+                                    <span class="box-info-num" id="logCount">0</span>
+                                    <span class="box-info-label">台</span>
+                                </div>
+                                <div class="box-label">
+                                    <span>告警网络设备数</span>
+                                    <span class="box-info-num" id="logCount">0</span>
+                                    <span class="box-info-label">台</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-3">
+                        <div class="box" id="standforpos3" style="border: none;">
+                            <div class="box-icon icon4"></div>
+                            <div class="box-content">
+                                <div class="box-info">
+                                    <span class="box-info-num" id="deviceLostCount">0</span>
+                                    <span class="box-info-label">台</span>
+                                </div>
+                                <div class="box-label">当前失连接设备数</div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid" style="margin-top: 40px">
+
+            <div class="col-md-8">
+                <div class="box">
+                    <div class="b-title">服务器实时性能监控</div>
+                    <div class="b-body" id="realmon"></div>
+                    <i class="b-lt"></i>
+                    <i class="b-lb"></i>
+                    <i class="b-rt"></i>
+                    <i class="b-rb"></i>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <div class="b-title">服务器异常告警中心</div>
+                    <div class="b-body" id="alertgrid">
+
+                        <table class="m-grid m-grid-thead">
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>服务器名称</th>
+                                    <th>服务器IP</th>
+                                    <th>告警事件</th>
+                                    <th>是否处理</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <div class="gridRoll">
+                            <div class="gridList" id="alert-grid">
+                                <table class="m-grid">
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <i class="b-lt"></i>
+                    <i class="b-lb"></i>
+                    <i class="b-rt"></i>
+                    <i class="b-rb"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer class="footer"></footer>
+    <script src="js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="js/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/plugins/echarts/echarts.min.js"></script>
+    <script src="js/plugins/d3/d3.v3.min.js"></script>
+    <script src="js/plugins/scrool/scrollNum.js"></script>
+    <script src="js/mirror/m-common.js"></script>
+    <script src="../../oem/js/info.js"></script>
+    <script src="../../oem/js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/mirror/server.js"></script>
+    <script src="js/ajaxControl.js"></script>
+</body>
+
+</html>

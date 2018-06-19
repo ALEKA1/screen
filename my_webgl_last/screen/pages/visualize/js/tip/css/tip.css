@@ -1,0 +1,44 @@
+/*tip*/
+.dv-tip{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  min-width: 120px;
+  height: 26px;
+  transform: translateX(-50%);
+  padding: 0 10px;
+  font-size: 0;
+  z-index: 99999;
+  display: none;
+}
+.dv-tip-icon{
+  display: inline-block!important;
+  font-style: normal;
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+  margin-right: 8px;
+  box-sizing: border-box;
+}
+.dv-tip-info{
+  color: #0effff;
+  background-color: #04455a;
+}
+.dv-tip-info .dv-tip-icon{
+  background-image: url("../images/tip-info.png");
+  background-repeat: no-repeat;
+}
+.dv-tip-warn{
+  color: #d21438;
+  background-color: #350a28;
+}
+.dv-tip-warn .dv-tip-icon{
+  background-image: url("../images/tip-warn.png");
+  background-repeat: no-repeat;
+}
+.dv-tip-msg{
+  display: inline-block!important;
+  font-size: 14px;
+  line-height: 26px;
+  vertical-align: top;
+}

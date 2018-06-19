@@ -1,0 +1,97 @@
+
+
+window.width = $(window).width();
+window.height = $(window).height();
+var dataList = [
+    {
+        nodeName:"基础信息",
+        childrenList:[
+            {
+                nodeName:"IDC信息",
+                childrenList:[
+                    {
+                        nodeName:"企业名称"
+                    },
+                    {
+                        nodeName:"服务器URL"
+                    },
+                    {
+                        nodeName:"IPS运营商"
+                    },
+                    {
+                        nodeName:"物理位置"
+                    },
+                    {
+                        nodeName:"负责人"
+                    },
+                    {
+                        nodeName:"联系方式"
+                    }
+                ]
+            },
+            {
+                nodeName:"备案信息",
+                childrenList:[
+                    {
+                        nodeName:"域名"
+                    },
+                    {
+                        nodeName:"注册人"
+                    }
+                ]
+            },
+            {
+                nodeName:"IP信息",
+            },
+            {
+                nodeName:"同网络资产分析",
+            }
+        ]
+    }
+]
+var proof = [
+    {
+        msg:"相似性IP1.1.1.2对51job.com上传恶意文件成功",
+        time:"2017-01-02"
+    },
+    {
+        msg:"监测出1.1.1.1存在暗链，地址http",
+        time:"2017-01-05"
+    },
+    {
+        msg:"1.1.11针对51.jib.com进行数据窃取行为",
+        time:"2017-01-07"
+    },
+    {
+        msg:"1.1.11针对51.jib.com进行数据窃取行为",
+        time:"2017-01-15"
+    },
+    {
+        msg:"1.1.11等三个IP发起扫描行为攻击",
+        time:"2017-02-02"
+    },
+    {
+        msg:"相似性IP1.1.1.2对51job.com上传恶意文件成功",
+        time:"2017-03-02"
+    },
+    {
+        msg:"监测出1.1.1.1存在暗链，地址http",
+        time:"2017-03-15"
+    },
+    {
+        msg:"1.1.11针对51.jib.com进行数据窃取行为",
+        time:"2017-04-07"
+    },
+    {
+        msg:"1.1.11针对51.jib.com进行数据窃取行为",
+        time:"2017-04-15"
+    },
+    {
+        msg:"1.1.11针对51.jib.com进行数据窃取行为",
+        time:"2017-04-15"
+    },
+    {
+        msg:"1.1.11针对51.jib.com进行数据窃取行为",
+        time:"2017-04-15"
+    }
+]

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="js/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./js/plugins/scrollbar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link href="css/mirror/mirror_common.css" rel="stylesheet" type="text/css" />
+    <link href="css/mirror/menace.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body class="mirror_bg">
+<!--header-->
+<header class="OEM_header"></header>
+<!--nav-->
+<nav class="mirror-nav"></nav>
+<div class="container-fluid" style="margin-top: 4%;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="scan">
+                <div class="scan-inner"></div>
+                <div class="scan-pointer"></div>
+                <div class="scan-chart" id="scan"></div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="box">
+                <div class="b-title">攻击者基本信息</div>
+                <div class="b-body info">
+                    <div class="attacker"><div class="avatar"></div></div>
+                    <div class="attack-list">
+                        <div class="attack-info info-inline">
+                            <p><span class="i-name">黑客IP</span><span class="i-value j-ip"></span></p>
+                            <p><span class="i-name">来源地</span><span class="i-value j-place"></span></p>
+                            <p><span class="i-name">危险等级</span><span class="i-value j-level"></span></p>
+                        </div>
+                        <div class="attack-info info-block">
+                            <p><span class="i-name">攻击类型</span><span class="i-value j-type"></span></p>
+                            <p><span class="i-name">最近攻击时间</span><span class="i-value j-time"></span></p>
+                        </div>
+                    </div>
+
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+            <div class="box" style="margin-top: 3%">
+                <div class="b-title">攻击者危险等级分析</div>
+                <div class="b-body level">
+                    <div class="attacker"><div class="avatar"></div></div>
+                    <div class="level-user j-user"></div>
+                    <div class="arrow"></div>
+                    <div id="levelChart" class="pull-left"></div>
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+            <div class="box trace" style="margin-top: 3%">
+                <div class="b-title">历史攻击轨迹分析</div>
+                <div class="b-body trace-body">
+                    <table class="m-grid m-grid-thead">
+                        <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>攻击源IP</th>
+                            <th>攻击域名</th>
+                            <th>攻击类型</th>
+                            <th>危险等级</th>
+                        </tr>
+                        </thead>
+                    </table>
+                   <!-- <div class="time-grid-scroll scrollbar">
+                        <table class="m-grid" id="trace-grid">
+                            <tbody></tbody>
+                        </table>
+                    </div>-->
+                    <div class="scrollbar" style="height: 250px;overflow: auto">
+                        <table class="m-grid" id="trace-grid">
+                          <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--footer-->
+<footer class="footer"></footer>
+
+<script src="js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="./js/plugins/moment/moment.js"></script>
+<script src="js/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="./js/plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/plugins/echarts/echarts.min.js"></script>
+<script src="js/plugins/d3/d3.v3.min.js"></script>
+<script src="js/plugins/scrool/scrollNum.js"></script>
+<script src="js/common.js"></script>
+<script src="js/mirror/m-common.js"></script>
+<script src="../../oem/js/info.js"></script>
+<script src="../../oem/js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/mirror/menace.js"></script>
+<script src="js/ajaxControl.js"></script>
+</body>
+</html>

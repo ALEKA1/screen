@@ -1,0 +1,199 @@
+.box {
+    font-size: 0;
+    text-align: center;
+}
+
+.box-icon {
+    display: inline-block;
+}
+
+.data {
+    width: 200px;
+    height: 15px;
+    background-color: rgb(95, 127, 184);
+    position: absolute;
+    top: -22px;
+    left: -20px;
+}
+
+.data .inner {
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}
+
+.spaceinner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+.spacebottom {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background-color: pink;
+}
+
+.tl {
+    position: relative;
+    top: 30px;
+    left: 20px;
+}
+
+.left {
+    /* width: 30%; */
+    height: 100%;
+    background-color: rgb(233, 112, 76);
+}
+
+.tl .alrea::before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background-color: rgb(233, 112, 76);
+    left: -18px;
+    top: 4px;
+}
+
+.tl .sti::before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background-color: rgb(95, 127, 184);
+    left: -18px;
+    top: 25px;
+}
+
+.box-icon.icon1 {
+    height: 89px;
+    width: 58px;
+    background-image: url("../../img/mirror/monitor1.png");
+    background-size: 58px 89px;
+}
+
+.box-icon.icon2 {
+    background: url("../../img/mirror/storage.png") no-repeat center;
+    height: 88px;
+    width: 88px;
+}
+
+.box-icon.icon3 {
+    background: url("../../img/mirror/give an alarm.png") no-repeat center;
+    height: 88px;
+    width: 80px;
+}
+
+.box-icon.icon4 {
+    background-image: url("../../img/mirror/monitor4.png");
+    height: 80px;
+    width: 102px;
+}
+
+.box-content {
+    display: inline-block;
+    padding-left: 20px;
+    vertical-align: top;
+    margin-top: 10px;
+}
+
+.box-info-num {
+    font-size: 30px;
+    color: #ffff9f;
+    text-align: left;
+    font-family: 'fnum'
+}
+
+.box-info-label {
+    font-size: 14px;
+    color: #ffff9f
+}
+
+.box-label {
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+}
+
+.gridRoll {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    overflow: hidden
+}
+
+.gridList {
+    position: absolute;
+    width: 100%
+}
+
+.m-grid {
+    width: 100%;
+    font-family: 'Simsun';
+    table-layout: fixed
+}
+
+.m-grid-thead {
+    margin-bottom: 36px
+}
+
+.m-grid thead th {
+    color: #07a7b3;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap
+}
+
+.m-grid tbody tr {
+    border-bottom: 1px solid #162962;
+    height: 42px
+}
+
+.m-grid tbody tr:last-child {
+    border-bottom: 0
+}
+
+.m-grid tbody td {
+    font-size: 10px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.m-grid tbody tr td:nth-child(odd) {
+    color: #ffff93
+}
+
+.m-grid tbody tr td:nth-child(even) {
+    color: #fff
+}
+
+.m-grid thead th:nth-child(1),
+.m-grid tbody td:nth-child(1) {
+    width: 15%
+}
+
+.m-grid thead th:nth-child(2),
+.m-grid tbody td:nth-child(2) {
+    width: 20%
+}
+
+.m-grid thead th:nth-child(3),
+.m-grid tbody td:nth-child(3) {
+    width: 20%
+}
+
+.m-grid thead th:nth-child(4),
+.m-grid tbody td:nth-child(4) {
+    width: 35%
+}
+
+.m-grid thead th:nth-child(5),
+.m-grid tbody td:nth-child(5) {
+    width: 10%
+}

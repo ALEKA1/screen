@@ -1,0 +1,23 @@
+#OEM_layout-logo {
+  width: 100%;
+  background-image: url('../images/headerLogo.png');
+  background-position: 20% center;
+  background-repeat: no-repeat;
+  background-size: auto 80%;
+}
+#OEM_loginHead{
+  color: #a5e1ff;
+  font-size:  30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#OEM_loginHead #OEM_logoImage{
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+  background-image: url('../images/logo_login.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}

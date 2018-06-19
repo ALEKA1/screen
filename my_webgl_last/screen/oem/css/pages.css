@@ -1,0 +1,15 @@
+.OEM_header{
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.OEM_header > .OEM_logo{
+  height:100%;
+}
+.OEM_header > .OEM_title{
+  height: 100%;
+  font-size: .3rem;
+  color: #107fb6;
+  margin-left: .2rem;
+  margin-top: .1rem;
+}

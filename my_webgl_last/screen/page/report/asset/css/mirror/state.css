@@ -1,0 +1,298 @@
+
+.mirror_bg{
+    background-image: url("../../image/mirror/state_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media screen and (min-width: 1920px){
+    .mirror_bg{
+        background-size: 100% 1080px;
+    }
+    .header .title{
+        font-size: 40px;
+    }
+}
+.time{
+    position: absolute;
+    top: 82px;
+    left: 50%;
+    width: 246px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Microsoft YaHei';
+    margin-left: -123px;
+}
+.flow{
+    position: absolute;
+    top: 60px;
+    width: 392px;
+    height: 109px;
+    background-image: url("../../image/mirror/bt-border.png");
+    z-index: 999;
+}
+.flow.in{
+    left: 50px;
+    background-position: 0 0;
+}
+.flow.out{
+    right: 50px;
+    background-position: 0 -109px;
+}
+.flow .f-title{
+    font-size: 16px;
+    color: #fff;
+    font-family: "Simsun";
+    font-weight: bold;
+    padding-top: 10px;
+}
+.flow.in .f-title{
+    padding-left: 32px;
+    text-align: left;
+}
+.flow.out .f-title{
+    padding-right: 32px;
+    text-align: right;
+}
+.flow .f-num{
+    font-family: "SimSun";
+    font-size: 14px;
+    color: #ffff93;
+}
+.flow.in .f-num{
+    padding-left: 64px;
+    text-align: left;
+}
+.flow.out .f-num{
+    padding-right: 64px;
+    text-align: right;
+}
+.flow-in,.flow-out{
+    font-family: "fnum";
+    font-size: 40px;
+}
+.rank{
+    z-index: 999;
+    width: 25%;
+}
+.area{
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+}
+.source{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}
+.area table,.source table{
+    width: 100%;
+    table-layout: fixed;
+}
+.r-info{
+    display: block;
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    font-family: 'Simsun';
+    color: #fff;
+    margin-bottom: 10px;
+}
+.r-info .r-name{
+    float: left;
+    width: 15%;
+}
+.r-info .r-chart{
+    float: left;
+    width: 70%;
+}
+.r-info .r-chart .progress{
+    margin-bottom: 0;
+    background-color: transparent;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #1f468f;
+    padding: 2px;
+}
+.r-info .r-chart .progress-bar{
+    line-height: 14px;
+}
+.r-info .r-count{
+    float: left;
+    width: 15%;
+}
+.area .progress-bar{
+    background-color: #eb7046;
+    float: left;
+}
+.area .r-name{
+    text-align: right;
+}
+.source .progress-bar{
+    background-color: #49c9ce;
+}
+.source .r-count{
+    text-align: right;
+}
+.view{
+    width: 40%;
+    position: absolute;
+    left: 30%;
+    bottom: 50px;
+}
+.view .b-body{
+    overflow: hidden;
+}
+
+.v-chart{
+    text-align: right;
+    margin-bottom: 10px;
+}
+.v-chart span{
+    color: #fff;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.v-chart span i{
+    margin-right: 8px;
+}
+.v-visit,.v-attack{
+    display: inline-block;
+    width: 20px;
+    height: 6px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.v-visit{
+    background-color: #0aefee;
+}
+.v-attack{
+    background-color: #d6a137;
+}
+.v-info{
+    float: left;
+    width: 20px;
+    height: 120px;
+    position: relative;
+    z-index: 1;
+}
+.v-info:nth-child(odd){
+    background-color: #172c6b;
+}
+.v-info:nth-child(even){
+    background-color: #10205f;
+}
+.v-info .v-visit,
+.v-info .v-attack{
+    position: absolute;
+    left: 0;
+    z-index: 2;
+}
+.v-name{
+    color: #fff;
+    font-size: 12px;
+    writing-mode:tb-rl;
+    letter-spacing: 4px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    position: absolute;
+    left: 0;
+    z-index: 3;
+}
+.v-info:nth-child(odd) .v-name{
+    top: 0
+}
+.v-info:nth-child(even) .v-name{
+    bottom: 0
+}
+
+.map{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    margin: 0 auto;
+}
+.focus-wrap{
+    position: absolute;
+    left: 30%;
+    top: 50%;
+}
+.focus-main{
+    position: relative;
+}
+.focus-contain,.focus-map{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#zMap{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.focus-contain{
+    background-image: url(../../image/mirror/map_outline.png);
+    background-size: 100% 100%;
+    -webkit-animation: circle 8s linear infinite;
+    -o-animation: circle 8s linear infinite;
+    animation: circle 8s linear infinite;
+}
+.focus-map{
+    background-image: url(../../image/mirror/map_in.png);
+    background-size: 100% 100%;
+    -webkit-animation: circleO 8s linear infinite;
+    -o-animation: circleO 8s linear infinite;
+    animation: circleO 8s linear infinite;
+}
+@keyframes circle {
+    0%{
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes circle {
+    0%{
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes circleO {
+    0%{
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    100%{
+
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+@-webkit-keyframes circleO {
+    0%{
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+
+    }
+    100%{
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}

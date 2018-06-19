@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="js/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/mirror/mirror_common.css" type="text/css" />
+    <link rel="stylesheet" href="css/mirror/state.css" type="text/css"/>
+    <link rel="stylesheet" href="js/plugins/waterFlash/waterFlash.css">
+    <link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body class="mirror_bg">
+<!--header-->
+<header class="OEM_header"></header>
+<!--nav-->
+<nav class="mirror-nav"></nav>
+<div class="container">
+    <div class="row">
+        <!--<div class="color"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>-->
+        <div class="time"></div>
+        <!--<div class="total">
+            <div class="t-item">
+                <div class="t-info">
+                    <div class="t-num flowIn" data-decimals="2"></div>
+                    <span>MB</span>
+                </div>
+                <div class="t-name">实时进流量</div>
+            </div>
+            <div class="t-item">
+                <div class="t-info">
+                    <div class="t-num flowOut" data-decimals="2"></div>
+                    <span>MB</span>
+                </div>
+                <div class="t-name">实时出流量</div>
+            </div>
+            <div class="t-item">
+                <div class="t-info">
+                    <div class="t-num visitNum"></div>
+                    <span>次</span>
+                </div>
+                <div class="t-name">访问次数</div>
+            </div>
+            <div class="t-item">
+                <div class="t-info">
+                    <div class="t-num attackNum"></div>
+                    <span>次</span>
+                </div>
+                <div class="t-name">攻击次数</div>
+            </div>
+        </div>-->
+        <div class="total">
+            <span class="t-info">
+                <i class="chart fa fa-line-chart"></i><i class="t-txt">实时进流量</i>
+                <i class="t-num flowIn" data-decimals="2"></i><span>MB</span></span>
+            <span class="t-info">
+                <i class="chart fa fa-area-chart"></i><i class="t-txt">实时出流量</i>
+                <i class="t-num flowOut" data-decimals="2"></i><span>MB</span></span>
+            <span class="t-info"><i class="chart fa fa-eye"></i><i class="t-txt">访问次数</i>
+                <i class="t-num visitNum"></i><span>次</span></span>
+            <span class="t-info"><i class="chart fa fa-bullseye"></i><i class="t-txt">攻击次数</i><i class="t-num attackNum"></i><span>次</span></span>
+        </div>
+        <div class="rank area">
+            <div class="box">
+                <div class="b-title">攻击网站排行 TOP10</div>
+                <div class="b-body">
+                    <table>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+        </div>
+        <div class="rank source">
+            <div class="box">
+                <div class="b-title">攻击IP排行 TOP10</div>
+                <div class="b-body">
+                    <table>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+        </div>
+        <div class="view">
+            <div class="box">
+                <div class="b-title">访问/攻击次数分布情况视图</div>
+                <div class="b-body">
+                    <!--<div class="v-chart"><span><i class="v-visit"></i>访问</span><span><i class="v-attack"></i>攻击</span></div>-->
+                    <div class="v-body">
+                        <div id="viewChart"></div>
+                    </div>
+
+                </div>
+                <i class="b-lt"></i>
+                <i class="b-lb"></i>
+                <i class="b-rt"></i>
+                <i class="b-rb"></i>
+            </div>
+        </div>
+        <div class="map" id="map"></div>
+        <div class="focus-wrap">
+            <div class="focus-main">
+                <div class="focus-contain"></div>
+                <div class="focus-map"></div>
+                <div id="zMap"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="timePicker">
+    <div class="menu">
+        <div class="menu-wrapper">
+            <ul class="menu-items">
+
+                <li class="menu-item">
+                    <a class="menu-item-button" time="29d">
+                        <span>30天</span>
+                    </a>
+                    <div class="menu-item-bounce"></div>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item-button" time="6d">
+                        <span>7天</span>
+                    </a>
+                    <div class="menu-item-bounce"></div>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item-button active" time="0d">
+                        <span>当天</span>
+                    </a>
+                    <div class="menu-item-bounce" ></div>
+                </li>
+            </ul>
+            <a class="menu-toggle-button">
+                <span class="toggle-text">当天</span>
+                <div class="water-wrap">
+                    <div class="water-wave"></div>
+                </div>
+
+            </a>
+
+
+        </div>
+    </div>
+
+</div>
+
+<!--footer-->
+<footer class="footer"></footer>
+<script src="js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="js/plugins/waterFlash/TweenMax.min.js"></script>
+<script src="js/plugins/waterFlash/waterFlash.js"></script>
+<script src="js/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/plugins/echarts/echarts.min.js"></script>
+<script src="js/plugins/echarts/map/world-china.js"></script>
+<script src="js/plugins/echarts/map/province-map.js"></script>
+<script src="js/plugins/d3/d3.v3.min.js"></script>
+<script src="js/plugins/scrool/scrollNum.js"></script>
+<script src="js/plugins/scrool/item-scoller.js"></script>
+<script src="js/comm/location-all.js"></script>
+<script src="js/mirror/m-common.js"></script>
+<script src="js/plugins/moment/moment.js"></script>
+<script src="js/plugins/moment/zh-cn.js"></script>
+<script src="../../oem/js/info.js"></script>
+<script src="../../oem/js/config.js"></script>
+<script src="js/mirror/state.js"></script>
+<script src="js/ajaxControl.js"></script>
+
+</body>
+</html>

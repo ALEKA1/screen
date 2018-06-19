@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="js/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/mirror/mirror_common.css" type="text/css" />
+    <link rel="stylesheet" href="css/mirror/attacker.css" type="text/css"/>
+    <link rel="shortcut icon" href="../../oem/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body class="mirror_bg">
+<!--header-->
+<header class="OEM_header"></header>
+<!--nav-->
+<nav class="mirror-nav"></nav>
+<div class="container-fluid">
+    <!--顶部统计-->
+    <div class="row mt-10">
+        <div class="col-md-4">
+            <div class="total total-day">
+                <div class="total-inner">
+                    <div class="total-title">日累计攻击者</div>
+                    <div class="total-text"><span></span>人</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="total r-1 total-num">
+                <div class="total-inner">
+                    <div class="total-title">攻击者数量环比</div>
+                    <div id="" class="total-text" ><span class="total-arrow"></span><span class="total_percen"></span>%</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="total r-2 total-type">
+                <div class="total-inner">
+                    <div class="total-title">日累计攻击类型</div>
+                    <div class="total-text"><span></span>种</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--近7天-->
+    <div class="row">
+            <div class="col-md-6">
+                <div class="box">
+                    <div class="b-title">近7日攻击数量态势</div>
+                    <div class="b-body">
+                        <div id="weekNum"></div>
+                    </div>
+                    <div class="b-lt"></div>
+                    <div class="b-lb"></div>
+                    <div class="b-rt"></div>
+                    <div class="b-rb"></div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="box" >
+                    <div class="b-title">近7日主要攻击类型</div>
+                    <div class="b-body " style="overflow:hidden;">
+                        <div id="attackType">
+                            <div class="avatar-border"><div class="avatar"></div></div>
+                            <div class="arrow"></div>
+                            <!--<div class="pull-left">
+                                <div id="weekType"></div>
+                            </div>-->
+                            <div class="pull-left" style="width: calc(100% - 310px);">
+                                <table id="weekType">
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-lt"></div>
+                    <div class="b-lb"></div>
+                    <div class="b-rt"></div>
+                    <div class="b-rb"></div>
+                </div>
+            </div>
+        </div>
+    <div class="row mt-10" style="margin-top: 4%">
+        <div class="col-md-12">
+            <div class="box-b">
+                <div class="allday-title">本日网站被攻击态势</div>
+                <div class="b-body">
+                    <div class="col-md-12">
+                        <div id="allDay"></div>
+                    </div>
+
+                </div>
+                <div class="box-b1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-10" style="margin-top: 4%">
+                <div class="col-md-3">
+                    <div class="high-center">
+                        <div class="risk-title">日累计高危攻击者</div>
+                        <div class="high-risk">
+                            <div class="count-num"><span></span>人</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="middle-center">
+                        <div class="risk-title">日累计中危攻击者</div>
+                        <div class="middle-risk">
+                            <div class="count-num"><span></span>人</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="low-center">
+                        <div class="risk-title">日累计低危攻击者</div>
+                        <div class="low-risk">
+                            <div class="count-num"><span></span>人</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="fre-center">
+                        <div class="risk-title" style="margin-left: 20px;">7日累计攻击者数</div>
+                        <div class="fre-risk">
+                            <div class="count-num"><span></span>人</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</div>
+<!--footer-->
+<footer class="footer"></footer>
+<script src="js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="js/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/plugins/echarts/echarts.min.js"></script>
+<script src="js/plugins/d3/d3.v3.min.js"></script>
+<script src="js/plugins/scrool/scrollNum.js"></script>
+<script src="js/mirror/m-common.js"></script>
+<script src="../../oem/js/info.js"></script>
+<script src="../../oem/js/config.js"></script>
+<script src="js/mirror/attacker.js"></script>
+<script src="js/ajaxControl.js"></script>
+</body>
+</html>
